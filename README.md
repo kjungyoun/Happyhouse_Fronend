@@ -68,7 +68,7 @@
 - 메뉴바에서 아파트별 검색으로도 아파트 검색 가능
 - 아파트 검색 페이지에서 원하는 아파트 좌표 클릭시 해당 아파트 정보와 거래 내역이 card에 보임
 
-- ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/48318620/110942118-aefe0b00-837c-11eb-85b6-6f2aad152b6e.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/48318620/110942118-aefe0b00-837c-11eb-85b6-6f2aad152b6e.gif)
 
 영상 길이: 54초
 
