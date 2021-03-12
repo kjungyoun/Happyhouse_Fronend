@@ -13,6 +13,8 @@
 	href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
 	rel="stylesheet" crossorigin="anonymous" />
 <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
 	crossorigin="anonymous"></script>
 <style>
@@ -20,7 +22,33 @@
 	height: 100%;
 	width: 100%;
 }
+.card-header {
+	opacity: 1;
+	background-color: #17a2b8;
+}
+
+.heart:hover {
+	transform: scale(1.2);
+}
 </style>
+<script>
+	$(function() {
+		var unzzim = '🤍';
+		var zzim = '❤';
+
+		$('.heart').each(function(index,item) {
+			$(this).click(function() {
+				console.log($(this).text())
+				if ($(this).text() == zzim) {
+					$(this).text(unzzim)
+				} else {
+					$(this).text(zzim)
+				}
+			});
+		});
+
+	});
+</script>
 </head>
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-info">
@@ -170,6 +198,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-area mr-1"></i> 1번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -194,6 +223,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-area mr-1"></i> 2번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -204,6 +234,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-area mr-1"></i> 3번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -214,6 +245,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-area mr-1"></i> 4번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -224,6 +256,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-area mr-1"></i> 5번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -234,6 +267,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-area mr-1"></i> 6번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -244,6 +278,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-area mr-1"></i> 7번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -254,6 +289,7 @@
 						<div class="card mb-4">
 							<div class="card-header">
 								<i class="fas fa-chart-bar mr-1"></i> 8번 매물
+								<div class="heart" style="float: right;">🤍</div>
 							</div>
 							<div class="card-body">
 								<canvas id="myBarChart" width="100%" height="40"></canvas>
