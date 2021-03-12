@@ -13,32 +13,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
         <script type="text/javascript">
             $(function () {
-               // 글작성 버튼 구현
-               $("#write").click(function () {
-                   if (!$("#title").val()) {
-                       alert("글 제목을 입력해주세요");
-                       $("#title").focus();
-                       return;
-                   }
-                   if (!$("#content").val()) {
-                       alert("글 내용을 입력해주세요");
-                       $("#content").focus();
-                       return;
-                   }
-                   alert("게시글이 등록되었습니다.");
-                   location.href = "list.html";
-               });
+                // 글작성 버튼 구현
+                $("#write").click(function () {
+                    if (!$("#title").val()) {
+                        alert("글 제목을 입력해주세요");
+                        $("#title").focus();
+                        return;
+                    }
+                    if (!$("#content").val()) {
+                        alert("글 내용을 입력해주세요");
+                        $("#content").focus();
+                        return;
+                    }
+                    alert("게시글이 등록되었습니다.");
+                    location.href = "noitc_list.html";
+                });
 
-               // 초기화 버튼 구현
-               $("#reset").click(function () {
-                   $("#title").val("");
-                   $("#content").val("");
-               });
+                // 초기화 버튼 구현
+                $("#reset").click(function () {
+                    $("#title").val("");
+                    $("#content").val("");
+                });
 
-               // 목록 버튼 구현
-               $("#list").click(function () {
-                   location.href = "list.html";
-               });
+                // 목록 버튼 구현
+                $("#list").click(function () {
+                    location.href = "notice_list.html";
+                });
+            });
         </script>
     </head>
     <body class="sb-nav-fixed">
