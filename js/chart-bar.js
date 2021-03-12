@@ -7,7 +7,7 @@ var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["January", "천안시", "부산시", "수원시", "성남시", "서울시"],
     datasets: [{
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
