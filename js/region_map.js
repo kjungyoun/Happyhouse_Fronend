@@ -1,3 +1,6 @@
+window.onload = function() {
+}
+
 function initMap() {
 	var mulcam = {
 		lat : 37.5013068,
@@ -15,5 +18,23 @@ function initMap() {
 		map : map
 	});
 
+	var myCity = new google.maps.Circle({
 
+		center : mulcam,
+
+		radius : 1000,
+
+		strokeColor : "#bee5eb",
+
+		strokeOpacity : 0.8,
+
+		strokeWeight : 2,
+
+		fillColor : "#bee5eb",
+
+		fillOpacity : 0.4
+
+	});
+
+	myCity.setMap(map);
 }
