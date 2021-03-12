@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>HappyHouse</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script>
+            $(function () {
+                var unzzim = "🤍";
+                var zzim = "❤";
+
+                $(".heart").each(function (index, item) {
+                    $(this).click(function () {
+                        console.log($(this).text());
+                        if ($(this).text() == zzim) {
+                            $(this).text(unzzim);
+                        } else {
+                            $(this).text(zzim);
+                        }
+                    });
+                });
+                $(".col-lg-3").each(function (index, item) {
+                    $(this).click(function (e) {
+                        if ($(e.target).hasClass("heart")) {
+                        } else {
+                            location.href = "brand.html";
+                        }
+                    });
+                });
+            });
+        </script>
+        <style>
+            .heart:hover {
+                transform: scale(1.2);
+            }
+            .col-lg-3:hover {
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-info">
+            <a class="navbar-brand" href="index.html">Happy House</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        id="userDropdown"
+                        href="#"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        ><i class="fas fa-user fa-fw"></i
+                    ></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="profile_setting.html">회원정보 수정</a>
+                        <a class="dropdown-item" href="user_search.html">회원 검색</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">로그아웃</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">메인</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                메인페이지
+                            </a>
+                            <a class="nav-link" href="notice_list.html">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                공지사항
+                            </a>
+                            <div class="sb-sidenav-menu-heading">컨텐츠</div>
+                            <a
+                                class="nav-link collapsed"
+                                href="#"
+                                data-toggle="collapse"
+                                data-target="#collapseLayouts"
+                                aria-expanded="false"
+                                aria-controls="collapseLayouts"
+                            >
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-columns"></i>
+                                </div>
+                                관심지역
+                                <div class="sb-sidenav-collapse-arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="bookmark.html">찜 내역</a> <a class="nav-link" href="#">주변환경</a>
+                                </nav>
+                            </div>
+                            <a
+                                class="nav-link collapsed"
+                                href="#"
+                                data-toggle="collapse"
+                                data-target="#collapsePages"
+                                aria-expanded="false"
+                                aria-controls="collapsePages"
+                            >
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                매물검색
+                                <div class="sb-sidenav-collapse-arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="region.html">
+                                        원하는 지역 매물
+                                        <div class="sb-sidenav-collapse-arrow">
+                                            <i class="fas fa-angle-down"></i>
+                                        </div>
+                                    </a>
+                                    <a class="nav-link collapsed" href="brand.html">
+                                        원하는 브랜드 매물
+                                        <div class="sb-sidenav-collapse-arrow">
+                                            <i class="fas fa-angle-down"></i>
+                                        </div>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Happy House
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <!-- 메인 화면 -->
+                <main>
+                    <div class="container-fluid">
+                        <div style="width: 70%; margin: auto">
+                            <h4 class="mt-4 text-center">찜 목록</h4>
+                        </div>
+                        <span class="badge badge-secondary">주의</span>
+                        <p>찜 목록은 최대 30개까지만 저장됩니다.</p>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
+                                    <div class="card-header bg-info" style="height: 50%"></div>
+                                    <div class="card-body">
+                                        <div>
+                                            <font size="5"><b>OO아파트</b></font>
+                                            <div class="heart" style="float: right">🤍</div>
+                                        </div>
+                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
+                                        <table class="apart-info mt-2">
+                                            <tr>
+                                                <td>지역</td>
+                                                <td>서울시 구로구 구로1동</td>
+                                            </tr>
+                                            <tr>
+                                                <td>동호수</td>
+                                                <td>107동 3603호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>전용면적</td>
+                                                <td>105m<sup>2</sup></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
+                                    <div class="card-header bg-info" style="height: 50%"></div>
+                                    <div class="card-body">
+                                        <div>
+                                            <font size="5"><b>OO아파트</b></font>
+                                            <div class="heart" style="float: right">🤍</div>
+                                        </div>
+                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
+                                        <table class="apart-info mt-2">
+                                            <tr>
+                                                <td>지역</td>
+                                                <td>서울시 구로구 구로1동</td>
+                                            </tr>
+                                            <tr>
+                                                <td>동호수</td>
+                                                <td>107동 3603호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>전용면적</td>
+                                                <td>105m<sup>2</sup></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
+                                    <div class="card-header bg-info" style="height: 50%"></div>
+                                    <div class="card-body">
+                                        <div>
+                                            <font size="5"><b>OO아파트</b></font>
+                                            <div class="heart" style="float: right">🤍</div>
+                                        </div>
+                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
+                                        <table class="apart-info mt-2">
+                                            <tr>
+                                                <td>지역</td>
+                                                <td>서울시 구로구 구로1동</td>
+                                            </tr>
+                                            <tr>
+                                                <td>동호수</td>
+                                                <td>107동 3603호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>전용면적</td>
+                                                <td>105m<sup>2</sup></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
+                                    <div class="card-header bg-info" style="height: 50%"></div>
+                                    <div class="card-body">
+                                        <div>
+                                            <font size="5"><b>OO아파트</b></font>
+                                            <div class="heart" style="float: right">🤍</div>
+                                        </div>
+                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
+                                        <table class="apart-info mt-2">
+                                            <tr>
+                                                <td>지역</td>
+                                                <td>서울시 구로구 구로1동</td>
+                                            </tr>
+                                            <tr>
+                                                <td>동호수</td>
+                                                <td>107동 3603호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>전용면적</td>
+                                                <td>105m<sup>2</sup></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-lg-3">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
+                                    <div class="card-header bg-info" style="height: 50%"></div>
+                                    <div class="card-body">
+                                        <div>
+                                            <font size="5"><b>OO아파트</b></font>
+                                            <div class="heart" style="float: right">🤍</div>
+                                        </div>
+                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
+                                        <table class="apart-info mt-2">
+                                            <tr>
+                                                <td>지역</td>
+                                                <td>서울시 구로구 구로1동</td>
+                                            </tr>
+                                            <tr>
+                                                <td>동호수</td>
+                                                <td>107동 3603호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>전용면적</td>
+                                                <td>105m<sup>2</sup></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
+                                    <div class="card-header bg-info" style="height: 50%"></div>
+                                    <div class="card-body">
+                                        <div>
+                                            <font size="5"><b>OO아파트</b></font>
+                                            <div class="heart" style="float: right">🤍</div>
+                                        </div>
+                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
+                                        <table class="apart-info mt-2">
+                                            <tr>
+                                                <td>지역</td>
+                                                <td>서울시 구로구 구로1동</td>
+                                            </tr>
+                                            <tr>
+                                                <td>동호수</td>
+                                                <td>107동 3603호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>전용면적</td>
+                                                <td>105m<sup>2</sup></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                            <div><a href="#">Privacy Policy</a> &middot; <a href="#">Terms &amp; Conditions</a></div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="./js/chart-area.js"></script>
+        <script src="./js/chart-bar.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+    </body>
+</html>
