@@ -8,9 +8,13 @@
         <meta name="author" content="" />
         <title>Page Title - SB Admin</title>
         <link href="./css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-info">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -18,74 +22,71 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                                    <div class="card-header">
+                                        <h3 class="text-center font-weight-light my-4">회원 가입</h3>
+                                    </div>
                                     <div class="card-body">
-                                        <form>
-                                            <div class="form-row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputFirstName">First Name</label>
-                                                        <input
-                                                            class="form-control py-4"
-                                                            id="inputFirstName"
-                                                            type="text"
-                                                            placeholder="Enter first name"
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputLastName">Last Name</label>
-                                                        <input
-                                                            class="form-control py-4"
-                                                            id="inputLastName"
-                                                            type="text"
-                                                            placeholder="Enter last name"
-                                                        />
-                                                    </div>
-                                                </div>
+                                        <form action="login.html" class="was-validated">
+                                            <div class="form-group">
+                                                <label for="email">이메일:</label>
+                                                <input type="email" class="form-control" id="email" placeholder="이메일 입력" name="email" required />
+                                                <div class="valid-feedback">유효합니다.</div>
+                                                <div class="invalid-feedback">이 공백란을 채워주세요!</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                                <label for="uname">회원 이름:</label>
                                                 <input
-                                                    class="form-control py-4"
-                                                    id="inputEmailAddress"
-                                                    type="email"
-                                                    aria-describedby="emailHelp"
-                                                    placeholder="Enter email address"
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="uname"
+                                                    placeholder="회원 이름 입력"
+                                                    name="uname"
+                                                    required
                                                 />
+                                                <div class="valid-feedback">유효합니다.</div>
+                                                <div class="invalid-feedback">이 공백란을 채워주세요!</div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="small mb-1" for="inputPassword">Password</label>
+                                                        <label for="pwd">비밀번호:</label>
                                                         <input
-                                                            class="form-control py-4"
-                                                            id="inputPassword"
                                                             type="password"
-                                                            placeholder="Enter password"
+                                                            class="form-control"
+                                                            id="pwd"
+                                                            placeholder="비밀번호 입력"
+                                                            name="pswd"
+                                                            required
                                                         />
+                                                        <div class="valid-feedback">유효합니다.</div>
+                                                        <div class="invalid-feedback">이 공백란을 채워주세요!</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
+                                                        <label for="pwd">비밀번호 확인:</label>
                                                         <input
-                                                            class="form-control py-4"
-                                                            id="inputConfirmPassword"
                                                             type="password"
-                                                            placeholder="Confirm password"
+                                                            class="form-control"
+                                                            id="pwd"
+                                                            placeholder="비밀번호 확인"
+                                                            name="confirm-pswd"
+                                                            required
                                                         />
+                                                        <div class="valid-feedback">유효합니다.</div>
+                                                        <div class="invalid-feedback">이 공백란을 채워주세요!</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mt-4 mb-0">
-                                                <a class="btn btn-primary btn-block" href="login.html">Create Account</a>
+                                                <button type="submit" id="create-account" class="btn btn-info btn-block">가입</button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="login.html">Have an account? Go to login</a></div>
+                                        <div class="small">
+                                            <a href="login.html">계정이 있으신가요? 로그인하러 가기</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -98,11 +99,7 @@
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div><a href="#">Privacy Policy</a> &middot; <a href="#">Terms &amp; Conditions</a></div>
                         </div>
                     </div>
                 </footer>
