@@ -1,5 +1,8 @@
-function initMap(r) {
-	if(myCity){
+function initMap(r, z) {
+	if (z == null) {
+		z = 17
+	}
+	if (myCity) {
 		myCity.setMap(null)
 	}
 	var mulcam = {
@@ -7,7 +10,7 @@ function initMap(r) {
 		lng : 127.037471
 	};
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom : 15,
+		zoom : z,
 		center : mulcam
 	});
 	var marker = new google.maps.Marker({
