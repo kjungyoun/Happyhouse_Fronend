@@ -11,6 +11,30 @@
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#modify").click(function () {
+                    if (!$("#pwd").val()) {
+                        alert("새로운 비밀번호를 입력하세요");
+                        $("#pwd").focus();
+                        return;
+                    }
+                    if (!$("#pwd-confirm").val()) {
+                        alert("비밀번호 확인란을 입력하세요");
+                        $("#pwd-confirm").focus();
+                        return;
+                    }
+                    alert("비밀번호 수정 완료!");
+                    location.href = "index.html";
+                });
+                $("#delete").click(function () {
+                    if (confirm("회원 탈퇴를 하시겠습니까")) {
+                        alert("회원 탈퇴 완료!");
+                        location.href = "login.html";
+                    }
+                });
+            });
+        </script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-info">
@@ -189,12 +213,10 @@
                                             </div>
                                             <div class="form-group mt-4 mb-0">
                                                 <div class="form-group mt-4 mb-0">
-                                                    <a class="btn btn-info btn-block" style="margin-top: 130px" href="index.html" id="modify"
-                                                        >수정완료</a
-                                                    >
+                                                    <a class="btn btn-info btn-block" style="margin-top: 130px" id="modify">수정완료</a>
                                                 </div>
                                                 <div class="form-group mt-4 mb-0">
-                                                    <a class="btn btn-danger btn-block" href="login.html" id="delete">탈퇴하기</a>
+                                                    <a class="btn btn-danger btn-block" id="delete">탈퇴하기</a>
                                                 </div>
                                             </div>
                                         </form>
