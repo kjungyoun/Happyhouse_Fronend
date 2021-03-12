@@ -39,8 +39,8 @@
                         ><i class="fas fa-user fa-fw"></i
                     ></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">회원정보 수정</a>
-                        <a class="dropdown-item" href="#">회원 검색</a>
+                        <a class="dropdown-item" href="profile_setting.html">회원정보 수정</a>
+                        <a class="dropdown-item" href="user_search.html">회원 검색</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="login.html">로그아웃</a>
                     </div>
@@ -52,12 +52,12 @@
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="sb-sidenav-menu-heading">메인</div>
                             <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                메인페이지
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <div class="sb-sidenav-menu-heading">컨텐츠</div>
                             <a
                                 class="nav-link collapsed"
                                 href="#"
@@ -67,13 +67,13 @@
                                 aria-controls="collapseLayouts"
                             >
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
+                                관심지역
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                    <a class="nav-link" href="#">찜 내역</a>
+                                    <a class="nav-link" href="#">주변환경</a>
                                 </nav>
                             </div>
                             <a
@@ -85,47 +85,33 @@
                                 aria-controls="collapsePages"
                             >
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
+                                매물검색
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a
                                         class="nav-link collapsed"
-                                        href="#"
+                                        href="region.html"
                                         data-toggle="collapse"
                                         data-target="#pagesCollapseAuth"
                                         aria-expanded="false"
                                         aria-controls="pagesCollapseAuth"
                                     >
-                                        Authentication
+                                        원하는 지역 매물
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
                                     <a
                                         class="nav-link collapsed"
-                                        href="#"
+                                        href="brand.html"
                                         data-toggle="collapse"
                                         data-target="#pagesCollapseError"
                                         aria-expanded="false"
                                         aria-controls="pagesCollapseError"
                                     >
-                                        Error
+                                        원하는 브랜드 매물
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Addons</div>
@@ -141,7 +127,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Happy House
                     </div>
                 </nav>
             </div>
@@ -149,10 +135,10 @@
                 <!-- 메인 화면 -->
                 <main>
                     <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            <div>
-                                <h3 class="test-center">회원정보 검색</h3>
-                            </div>
+                        <div style="width: 70%; margin: auto">
+                            <h1 class="mt-4 text-center">회원 정보 검색</h1>
+                        </div>
+                        <div class="row justify-content-center" style="width: 85%">
                             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                                 <div class="input-group">
                                     <input
@@ -168,6 +154,28 @@
                                 </div>
                             </form>
                         </div>
+                        <table class="table table-bordered mt-5" style="width: 70%; margin: 0 auto">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th style="width: 50%">이메일</th>
+                                    <th>닉네임</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>john@example.com</td>
+                                    <td>John</td>
+                                </tr>
+                                <tr>
+                                    <td>mary@example.com</td>
+                                    <td>Mary</td>
+                                </tr>
+                                <tr>
+                                    <td>july@example.com</td>
+                                    <td>July</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </main>
                 <footer class="py-4 bg-light">
