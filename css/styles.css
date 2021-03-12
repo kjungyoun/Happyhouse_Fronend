@@ -10251,3 +10251,12 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
 }
+.justify-content-center.pagination > .active > a, 
+.justify-content-center.pagination > .active > span, 
+.justify-content-center.pagination > .active > a:hover, 
+.justify-content-center.pagination > .active > span:hover, 
+.justify-content-center.pagination > .active > a:focus, 
+.justify-content-center.pagination > .active > span:focus {
+  background: #17a2b8;
+  border-color: #17a2b8;
+}
