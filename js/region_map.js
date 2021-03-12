@@ -1,13 +1,16 @@
-window.onload = function() {
-}
-
-function initMap() {
+function initMap(r, z) {
+	if (z == null) {
+		z = 17
+	}
+	if (myCity) {
+		myCity.setMap(null)
+	}
 	var mulcam = {
 		lat : 37.5013068,
 		lng : 127.037471
 	};
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom : 15,
+		zoom : z,
 		center : mulcam
 	});
 	var marker = new google.maps.Marker({
@@ -22,7 +25,7 @@ function initMap() {
 
 		center : mulcam,
 
-		radius : 1000,
+		radius : Number(r),
 
 		strokeColor : "#bee5eb",
 
