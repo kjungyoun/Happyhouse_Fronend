@@ -20,9 +20,9 @@
                     $(this).click(function () {
                         console.log($(this).text());
                         if ($(this).text() == zzim) {
-                            $(this).text(unzzim);
-                        } else {
-                            $(this).text(zzim);
+                            if (confirm("찜을 해제하시겠습니까?")) {
+                                $(this).parents(".col-lg-3").remove();
+                            }
                         }
                     });
                 });
@@ -186,7 +186,33 @@
                                     <div class="card-body">
                                         <div>
                                             <font size="5"><b>OO아파트</b></font>
-                                            <div class="heart" style="float: right">🤍</div>
+                                            <div class="heart" style="float: right">❤</div>
+                                        </div>
+                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
+                                        <table class="apart-info mt-2">
+                                            <tr>
+                                                <td>지역</td>
+                                                <td>서울시 구로구 구로5동</td>
+                                            </tr>
+                                            <tr>
+                                                <td>동호수</td>
+                                                <td>107동 3603호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>전용면적</td>
+                                                <td>105m<sup>2</sup></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
+                                    <div class="card-header bg-info" style="height: 50%"></div>
+                                    <div class="card-body">
+                                        <div>
+                                            <font size="5"><b>AA아파트</b></font>
+                                            <div class="heart" style="float: right">❤</div>
                                         </div>
                                         <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
                                         <table class="apart-info mt-2">
@@ -211,8 +237,8 @@
                                     <div class="card-header bg-info" style="height: 50%"></div>
                                     <div class="card-body">
                                         <div>
-                                            <font size="5"><b>OO아파트</b></font>
-                                            <div class="heart" style="float: right">🤍</div>
+                                            <font size="5"><b>TT아파트</b></font>
+                                            <div class="heart" style="float: right">❤</div>
                                         </div>
                                         <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
                                         <table class="apart-info mt-2">
@@ -237,8 +263,8 @@
                                     <div class="card-header bg-info" style="height: 50%"></div>
                                     <div class="card-body">
                                         <div>
-                                            <font size="5"><b>OO아파트</b></font>
-                                            <div class="heart" style="float: right">🤍</div>
+                                            <font size="5"><b>FF아파트</b></font>
+                                            <div class="heart" style="float: right">❤</div>
                                         </div>
                                         <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
                                         <table class="apart-info mt-2">
@@ -263,36 +289,8 @@
                                     <div class="card-header bg-info" style="height: 50%"></div>
                                     <div class="card-body">
                                         <div>
-                                            <font size="5"><b>OO아파트</b></font>
-                                            <div class="heart" style="float: right">🤍</div>
-                                        </div>
-                                        <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
-                                        <table class="apart-info mt-2">
-                                            <tr>
-                                                <td>지역</td>
-                                                <td>서울시 구로구 구로1동</td>
-                                            </tr>
-                                            <tr>
-                                                <td>동호수</td>
-                                                <td>107동 3603호</td>
-                                            </tr>
-                                            <tr>
-                                                <td>전용면적</td>
-                                                <td>105m<sup>2</sup></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="col-lg-3">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5 ml-4 mr-4" style="height: 500px">
-                                    <div class="card-header bg-info" style="height: 50%"></div>
-                                    <div class="card-body">
-                                        <div>
-                                            <font size="5"><b>OO아파트</b></font>
-                                            <div class="heart" style="float: right">🤍</div>
+                                            <font size="5"><b>XX아파트</b></font>
+                                            <div class="heart" style="float: right">❤</div>
                                         </div>
                                         <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
                                         <table class="apart-info mt-2">
@@ -317,8 +315,8 @@
                                     <div class="card-header bg-info" style="height: 50%"></div>
                                     <div class="card-body">
                                         <div>
-                                            <font size="5"><b>OO아파트</b></font>
-                                            <div class="heart" style="float: right">🤍</div>
+                                            <font size="5"><b>QQ아파트</b></font>
+                                            <div class="heart" style="float: right">❤</div>
                                         </div>
                                         <h5 class="deal-info">매매가(단위 : 만) 280,000</h5>
                                         <table class="apart-info mt-2">
