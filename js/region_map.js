@@ -1,7 +1,7 @@
-window.onload = function() {
-}
-
-function initMap() {
+function initMap(r) {
+	if(myCity){
+		myCity.setMap(null)
+	}
 	var mulcam = {
 		lat : 37.5013068,
 		lng : 127.037471
@@ -22,7 +22,7 @@ function initMap() {
 
 		center : mulcam,
 
-		radius : 1000,
+		radius : Number(r),
 
 		strokeColor : "#bee5eb",
 
