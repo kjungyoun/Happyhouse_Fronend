@@ -10,12 +10,20 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(function () {
+                // 처음 정보 삽입
                 $.ajax({
-                    url: "./data/user_info.jsp",
+                    url: "./data/user_info.json",
                     dataType: "json",
+                    success: function (data) {
+                        $("#email").val(data.email);
+                        $("#uname").val(data.name);
+                        $("#pwd").val(data.password);
+                    },
                 });
+
                 $("#modify").click(function () {
                     if (!$("#email").val()) {
                         alert("이메일을 입력하세요!");
@@ -170,32 +178,17 @@
                                     <div class="card-body">
                                         <form>
                                             <div class="form-group">
-                                                <label for="email">이메일:</label>
-                                                <input
-                                                    type="email"
-                                                    class="form-control"
-                                                    id="email"
-                                                    placeholder="이메일 입력"
-                                                    name="email"
-                                                    required
-                                                    readonly
-                                                />
+                                                <label for="email">이메일</label>
+                                                <input type="email" class="form-control" id="email" name="email" required readonly />
                                             </div>
                                             <div class="form-group">
-                                                <label for="uname">회원 이름:</label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    id="uname"
-                                                    placeholder="회원 이름 입력"
-                                                    name="uname"
-                                                    required
-                                                />
+                                                <label for="uname">닉네임</label>
+                                                <input type="text" class="form-control" id="uname" placeholder="닉네임 입력" name="uname" required />
                                             </div>
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="pwd">비밀번호:</label>
+                                                        <label for="pwd">비밀번호</label>
                                                         <input
                                                             type="password"
                                                             class="form-control"
@@ -208,11 +201,11 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="pwd">비밀번호 확인:</label>
+                                                        <label for="pwd">비밀번호 확인</label>
                                                         <input
                                                             type="password"
                                                             class="form-control"
-                                                            id="pwd"
+                                                            id="pwd-confirm"
                                                             placeholder="비밀번호 확인"
                                                             name="confirm-pswd"
                                                             required
@@ -229,11 +222,6 @@
                                                 </div>
                                             </div>
                                         </form>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        <div class="small">
-                                            <a href="login.html">계정이 있으신가요? 로그인하러 가기</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
