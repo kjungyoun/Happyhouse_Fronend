@@ -11,6 +11,21 @@
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(function () {
+                // 글쓰기 버튼 구현
+                $("#write").click(function () {
+                    location.href = "notice_register.html";
+                });
+
+                // 글 선택시 선택한 글의 번호 출력
+                $("body tr").each(function (idx, item) {
+                    $(item).click(function () {
+                        location.href = "notice_main_admin.html";
+                    });
+                });
+            });
+        </script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-info">
@@ -63,6 +78,28 @@
                                 </div>
                                 메인페이지
                             </a>
+                            <a
+                                class="nav-link collapsed"
+                                href="#"
+                                data-toggle="collapse"
+                                data-target="#collapseList"
+                                aria-expanded="false"
+                                aria-controls="collapseList"
+                            >
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-columns"></i>
+                                </div>
+                                공지사항
+                                <div class="sb-sidenav-collapse-arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="collapseList" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="notice_register.html">공지사항 등록</a>
+                                    <a class="nav-link" href="notice_list.html">공지사항 관리</a>
+                                </nav>
+                            </div>
                             <div class="sb-sidenav-menu-heading">컨텐츠</div>
                             <a
                                 class="nav-link collapsed"
@@ -129,55 +166,66 @@
                 <!-- 메인 화면 -->
                 <main>
                     <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5" style="height: 700px">
-                                    <div class="card-header">
-                                        <h3 class="text-center font-weight-light my-4">회원 정보 인증</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="email">이메일</label>
-                                                <input
-                                                    type="email"
-                                                    class="form-control"
-                                                    id="email"
-                                                    name="email"
-                                                    required
-                                                    readonly
-                                                    value="useremail@example.com"
-                                                />
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="uname">닉네임</label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    id="uname"
-                                                    placeholder="닉네임 입력"
-                                                    name="uname"
-                                                    required
-                                                    value="잠만보"
-                                                    readonly
-                                                />
-                                            </div>
+                        <div class="text-center" id="logo">
+                            <span class="font-weight-bold" style="font-size: 40px">공지사항</span>
+                        </div>
+                        <nav class="navbar navbar-expand-sm mt-3 justify-content-end">
+                            <button type="button" class="btn btn-info" style="margin-right: 1130px" id="write">글쓰기</button>
+                            <select name="cars" class="custom-select mr-1" style="width: 100px">
+                                <option selected value="no">글번호</option>
+                                <option value="title">제목</option>
+                                <option value="id">아이디</option>
+                            </select>
+                            <input type="text" class="form-control mr-1" placeholder="검색어 입력." id="keyword" style="width: 250px" />
+                            <button type="button" class="btn btn-secondary">검색</button>
+                        </nav>
+                        <div class="content-list mt-5">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>글번호</th>
+                                        <th style="width: 60%; text-align: center">제목</th>
+                                        <th>작성자</th>
+                                        <th>조회수</th>
+                                        <th>작성일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>글제목</td>
 
-                                            <div class="form-group">
-                                                <label for="pwd">비밀번호</label>
-                                                <input type="password" class="form-control" id="pwd" name="pswd" required />
-                                            </div>
-                                            <div class="form-group mt-4 mb-0">
-                                                <div class="form-group mt-4 mb-0">
-                                                    <a class="btn btn-info btn-block" style="margin-top: 130px" href="profile_fix.html" id="modify"
-                                                        >인증하기</a
-                                                    >
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                                        <td>작성자</td>
+                                        <td>조회수</td>
+                                        <td>작성일</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>글제목</td>
+                                        <td>작성자</td>
+                                        <td>조회수</td>
+                                        <td>작성일</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>글제목</td>
+                                        <td>작성자</td>
+                                        <td>조회수</td>
+                                        <td>작성일</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="page">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href="#">최신</a></li>
+                                <li class="page-item"><a class="page-link" href="#">이전</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">다음</a></li>
+                                <li class="page-item"><a class="page-link" href="#">마지막</a></li>
+                            </ul>
                         </div>
                     </div>
                 </main>
